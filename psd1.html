@@ -1,0 +1,269 @@
+<!DOCTYPE hmtl>
+<html>
+<head>
+	<title>
+	HTML5/CSS3 Responsive Theme
+	</title>
+	<meta charset="utf-8" />
+
+	<link rel="stylesheet" href="psdStyle.css" type="text/css" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+	<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script type="text/javascript">
+  window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+      title:{
+        text: ""
+      
+      },   
+      data: [{        
+        type: "column",
+		showInLegend: true,
+		name: "Bill Before Solar",
+		color: "#628C9E",
+        dataPoints: [
+        { x: 10, y: 171 },
+        { x: 20, y: 155},
+        { x: 30, y: 150 },
+        { x: 40, y: 165 },
+        { x: 50, y: 195 },
+        { x: 60, y: 168 },
+        { x: 70, y: 128 },
+        { x: 80, y: 134 },
+        { x: 90, y: 114}
+        ]
+      },
+      {        
+        type: "column",
+		showInLegend: true,
+		name: "Bill After Solar",
+		color: "#DDE2DC",
+        dataPoints: [
+        { x: 10, y: 71 },
+        { x: 20, y: 55},
+        { x: 30, y: 50 },
+        { x: 40, y: 65 },
+        { x: 50, y: 95 },
+        { x: 60, y: 68 },
+        { x: 70, y: 28 },
+        { x: 80, y: 34 },
+        { x: 90, y: 14}
+        ]
+      }        
+      ]
+    });
+
+    chart.render();
+  }
+  </script>
+	
+</head>
+
+<body class="body">
+
+	<header class="mainHeader">
+		<div>
+		<div><img src="logo.gif"></div>
+		<label class="labelTag">Solarhood</label>	
+		</div>
+		
+		<nav class="desktop">
+			<ul>
+				<li><a class="active color" href="#">
+				<div class="icon">
+				<div><i class="fa fa-home" aria-hidden="true"></i></div>
+				<div>Home</div>
+				</div>
+				
+				</a></li>
+				<li><a class="active color" href="#">
+				<div class="icon">
+				<div><i class="fa fa-tasks" aria-hidden="true"></i></div>
+				<div>Projects</div>
+				</div>
+				</a></li>
+				
+				<li><a class="active color" href="#">
+				<div class="icon">
+				<i class="fa fa-building-o" aria-hidden="true"></i>
+				<div>Savings</div>
+				</div>
+				</a></li>
+				
+				<li><a class="active color" href="#">
+				<div class="icon">
+				<i class="fa fa-newspaper-o" aria-hidden="true"></i>
+				<div>News</div>
+				</div>
+				</a></li>
+				
+				<li><a class="active color" href="#">
+				<div class="icon"><i class="fa fa-cog" aria-hidden="true"></i>
+				<div>Settings</div>
+				</div>
+				</a></li>
+				<li><a class="active color" href="#">
+				<div class="icon"><i class="fa fa-power-off" aria-hidden="true"></i>
+				<div>Logout</div>
+				</div>
+				</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="mainContent">
+		<div class="subContent">
+		
+		<div class="firstHalf">
+		
+			<div class="firstContent">
+			<span class="text-color">Potential lifetime Savings</span>
+			<span class="color" style="font-size: 25px;">$24,943&nbsp<i class="fa fa-exclamation-circle" style="font-size: 17px;" aria-hidden="true"></i></span>
+			</div>
+			
+			<div class="secondContent">
+			
+				<div class="flex">
+					<div class="flex-1">
+						<div class="color-font">$421</div>
+						<div class="text-color">Potential annual Savings</div>
+					</div>
+					<div class="flex-1">
+						<div class="color-font">$34</div>
+						<div class="text-color">Potential monthly Savings</div>
+					</div>
+				
+				</div>
+			
+			</div>
+			
+			<div class="thirdContent">
+				<div class="text-color">Average Monthly Electrical Bill</div>
+				<div id="chartContainer" style="height:50%; width: 95%;">
+				</div>
+			
+			</div>
+			
+			<div class="fourthContent">
+				<span>Production</span>
+				<span>Electricity Bill</span>
+			
+			</div>
+			<div class="fifthContent">
+				<span>
+				<i class="fa fa-share-square-o" style="font-size: 20px;" aria-hidden="true"></i>
+				&nbsp
+				<span class="text-color">Share my potential saving to Facebook</span>
+				</span>
+			
+			</div>
+		
+		</div>
+		<div class="verticalLine"></div>
+		<div class="secondHalf">
+			<div class="firstContent text-color">
+				3634 SE Bybee Blvd <i class="fa fa-map-marker" aria-hidden="true"></i>
+			</div>
+			<div class="secondContent">
+				Financing your Solar Panels
+			</div>
+			<div class="thirdContent">
+				<span>Buy</span>
+				<span>Loan</span>
+			</div>
+			<div class="thirdContent">
+				<div class="pd-btm-2">
+					<div class="font-22 color-red">
+					$3,097
+					</div>
+					<div class="text-color">
+					Total cost with incentives
+					</div>
+				
+				</div>
+				<div class="pd-btm-2">
+					<div class="font-22 color-blue">
+					$422
+					</div>
+					<div class="text-color">
+					Average annual saving
+					</div>
+				
+				</div>
+				<div class="pd-btm-2">
+					<div class="font-22 color-blue">
+					7.3 years
+					</div>
+					<div class="text-color">
+					Years until it pays for itself
+					</div>
+				
+				</div>
+				<div class="pd-btm-2">
+					<div class="font-22 color-blue">
+					$21,000
+					</div>
+					<div class="text-color">
+					Estimated Sys Costs
+					</div>
+				
+				</div>
+				<div class="pd-btm-2">
+					<div class="font-22 color-blue">
+					- $6,000
+					</div>
+					<div class="text-color">
+					Tax incentives
+					</div>
+				
+				</div>
+				<div class="pd-btm-2">
+					<div class="font-22 color-blue">
+					= $15,000
+					</div>
+					<div class="text-color">
+					Est Net cost to you
+					</div>
+				
+				</div>
+			</div>
+		</div>		
+		
+		</div>
+		
+		
+	</div>
+	
+<footer class="mainFooter">
+	<p class="hideOnSwitch">&copy; SolarHood 2017</p>
+	<nav class="mobile">
+			<ul>
+								
+				<li><a class="active color" href="#">
+				<div class="icon">
+				<i class="fa fa-building-o" aria-hidden="true"></i>
+				<div>Savings</div>
+				</div>
+				</a></li>
+				
+				<li><a class="active color" href="#">
+				<div class="icon"><i class="fa fa-cog" aria-hidden="true"></i>
+				<div>Bids</div>
+				</div>
+				</a></li>
+				
+				<li><a class="active color" href="#">
+				<div class="icon">
+				<i class="fa fa-newspaper-o" aria-hidden="true"></i>
+				<div>News</div>
+				</div>
+				</a></li>
+				
+			</ul>
+		</nav>
+	</footer> 
+
+</body>
+</html>
