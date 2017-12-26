@@ -9,20 +9,70 @@
 	<link rel="stylesheet" href="psdStyle.css" type="text/css" />
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
-	<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
 	<script type="text/javascript">
   window.onload = function () {
-    var chart = new CanvasJS.Chart("chartContainer",
-    {
-      title:{
-        text: ""
-      
-      },   
+	  
+	  Highcharts.chart('container', {
+		    chart: {
+		        type: 'column',
+		        spacingLeft: 0,
+		        spacingRight: 0
+		    },
+		    title: {
+		        text: ''
+		    },
+		   credits: {
+		    		 enabled: false
+		    	 },
+		    xAxis: {
+		        categories: [
+		            'Jan',
+		            'Feb',
+		            'Mar',
+		            'Apr',
+		            'May',
+		            'Jun',
+		            'Jul',
+		            'Aug',
+		            'Sep',
+		            'Oct',
+		            'Nov',
+		            'Dec'
+		        ],
+		        crosshair: true
+		    },
+		    yAxis: {
+		        min: 0,
+		        title: {
+		            text: ''
+		        }
+		    },
+		    plotOptions: {
+		        column: {
+		            pointPadding: 0.2,
+		            borderWidth: 0
+		        }
+		    },
+		    series: [{
+		        name: 'Bill Before Solar',
+		        data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+
+		    }, {
+		        name: 'Bill After Solar',
+		        data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
+
+		    }]
+		});
+	  
+	  
+    /* var chart = new CanvasJS.Chart("chartContainer",
+    {   
       data: [{        
         type: "column",
 		showInLegend: true,
 		name: "Bill Before Solar",
-		color: "#628C9E",
+		color: "#196598",
         dataPoints: [
         { x: 10, y: 171 },
         { x: 20, y: 155},
@@ -55,7 +105,8 @@
       ]
     });
 
-    chart.render();
+    chart.render(); */
+    
   }
   </script>
 	
@@ -72,7 +123,7 @@
 		<nav class="desktop">
 			<ul>
 				<li><a class="active color" href="#">
-				<div class="icon">
+				<div class="icon activeLabel">
 				<div><i class="fa fa-home" aria-hidden="true"></i></div>
 				<div>Home</div>
 				</div>
@@ -115,12 +166,18 @@
 
 	<div class="mainContent">
 		<div class="subContent">
-		
+		<div class="locationLabel text-color">
+				3634 SE Bybee Blvd &nbsp <i class="fa fa-map-marker" style="font-size: 20px;" aria-hidden="true"></i>
+		</div>
 		<div class="firstHalf">
 		
 			<div class="firstContent">
-			<span class="text-color">Potential lifetime Savings</span>
-			<span class="color" style="font-size: 25px;">$24,943&nbsp<i class="fa fa-exclamation-circle" style="font-size: 17px;" aria-hidden="true"></i></span>
+			<div class="text-color desktop">Potential lifetime Savings</div>
+			<div class="color" style="font-size: 30px;">
+			<label style="color: #327590;position: relative;">$24,943
+			<i class="fa fa-info-circle desktop" style="font-size: 17px;color: #327590;position: absolute;top: 2px;right: -20px;" aria-hidden="true"></i></div><div class="text-color mobile">Potential lifetime Savings</div>
+			
+			</label>
 			</div>
 			
 			<div class="secondContent">
@@ -140,9 +197,11 @@
 			</div>
 			
 			<div class="thirdContent">
-				<div class="text-color">Average Monthly Electrical Bill</div>
-				<div id="chartContainer" style="height:50%; width: 95%;">
-				</div>
+				<div class="text-color" style="font-weight: bold;">Average Monthly Electrical Bill</div>
+<!-- 				<div id="chartContainer" style="height:30%; width: 98%;"> -->
+				
+			<div id="container" style="width: 100%; height: 30%; margin: 0 auto"></div>
+		
 			
 			</div>
 			
@@ -163,15 +222,13 @@
 		</div>
 		<div class="verticalLine"></div>
 		<div class="secondHalf">
-			<div class="firstContent text-color">
-				3634 SE Bybee Blvd <i class="fa fa-map-marker" aria-hidden="true"></i>
-			</div>
 			<div class="secondContent">
 				Financing your Solar Panels
 			</div>
 			<div class="thirdContent">
 				<span>Buy</span>
 				<span>Loan</span>
+				<span class="mobile">Loan</span>
 			</div>
 			<div class="thirdContent">
 				<div class="pd-btm-2">
@@ -237,12 +294,12 @@
 	</div>
 	
 <footer class="mainFooter">
-	<p class="hideOnSwitch">&copy; SolarHood 2017</p>
+	<p class="hideOnSwitch" style="margin-left: 6%;">&copy; SolarHood 2017</p>
 	<nav class="mobile">
 			<ul>
 								
 				<li><a class="active color" href="#">
-				<div class="icon">
+				<div class="icon activeLabel">
 				<i class="fa fa-building-o" aria-hidden="true"></i>
 				<div>Savings</div>
 				</div>
