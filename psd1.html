@@ -11,7 +11,14 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
 	<script src="https://code.highcharts.com/highcharts.js"></script>
 	<script type="text/javascript">
-  window.onload = function () {
+	 
+	 sessionStorage.setItem("sessionData", "I am set in session storage.");  
+	 localStorage.setItem("localData", "I am set in local storage.");  
+	 
+	 console.log("getSession",sessionStorage.getItem("sessionData"));
+	 console.log("getLocal",localStorage.getItem("localData"));
+	 
+	 window.onload = function () {
 	  
 	  Highcharts.chart('container', {
 		    chart: {
@@ -200,7 +207,7 @@
 				<div class="text-color" style="font-weight: bold;">Average Monthly Electrical Bill</div>
 <!-- 				<div id="chartContainer" style="height:30%; width: 98%;"> -->
 				
-			<div id="container" style="width: 100%; height: 30%; margin: 0 auto"></div>
+			<div id="container" style="width: 95%; height: 30%; margin: 0 auto"></div>
 		
 			
 			</div>

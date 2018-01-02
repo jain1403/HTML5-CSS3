@@ -1,0 +1,85 @@
+<div ng-app="Example">
+    
+    <div ng-controller="TestController">
+        
+        <ul>
+            <li ng-repeat="item in list" id="{{item.id}}">
+                <span>{{item.name}}</span>
+                <button ng-click="addComments(item)">Add</button>
+                
+                <ul ng-show="item.children">
+                    <li id="{{child.id}}" ng-repeat="child in item.children">
+                        <span>{{child.name}}</span>
+                        <button ng-click="addChildren(child)">Add</button>
+                         <ul ng-show="child.subChildren">
+                              <li ng-repeat="subChild in child.subChildren">
+                                  <span>{{subChild.name}}</span>
+                              </li>
+                         </ul>
+                    </li>
+                </ul>
+        </ul>
+        
+    </div>
+    
+</div>
+
+
+
+
+----------------------------------------------------------------------------------------------------
+
+angular.module('Example', []).controller('TestController', [
+    '$scope', 
+    function ($scope) {
+        $scope.list = [
+            { name : 'Example 1' , id: "parent1" },
+            { name : 'Example 2' , id: "parent2" },
+            { name : 'Example 3' , id: "parent3" }
+        ];
+      	$scope.addComment=false;
+      	$scope.comment="";
+        
+      	$scope.addComments =function(item){
+        
+        var div = document.getElementById(item.id)
+        var commentDiv = document.createElement('div');
+				commentDiv.id = "commentDiv" + item.id;
+        
+         div.appendChild(commentDiv); 
+         
+         console.log("sdfsdf",commentDiv);
+         
+         console.log("sdfsdf",document.getElementById(commentDiv.id));
+         
+        document.getElementById(commentDiv.id).innerHTML =
+   '<textarea placeholder="Write something..." ng-model="comment" name="message" size="20"></textarea><button id="commentText'+ item.id +'" onclick="angular.element(document.getElementById("commentText'+ item.id +'")).scope().addComment(item,comment)">Add Commments</button>';
+        
+        
+    
+        };
+        $scope.addComment =function(item,comments){
+           console.log(item);
+                      console.log(comments);
+        console.log($scope.comment);
+        };
+        $scope.add = function (item,comments) {
+						     
+						item.children = (item.children || []);
+            var count = item.children.length + 1;
+            item.children.push({
+                name : 'child' + count,
+                id : item.id + 'child' + count
+            })
+        };
+        $scope.addChildren = function (item) {
+        console.log(item);
+            item.subChildren = (item.subChildren || []);
+            var count = item.subChildren.length + 1;
+            item.subChildren.push({
+                name : 'subChildren ' + count
+            })
+        };
+        
+    }
+]);
